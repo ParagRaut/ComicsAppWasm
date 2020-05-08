@@ -4,6 +4,8 @@ With this small installable app you can browse random comic strips from sources 
 
 This progressive web app is implemented in pure .Net Core Blazor WebAseembly
 
+It also uses 'Github Actions' to continuously integrate and deploy to github pages
+
 you can see it live here: <br/>
 * URL : https://paragraut.github.io/ComicsAppWasm/
 
