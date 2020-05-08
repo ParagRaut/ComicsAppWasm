@@ -1,0 +1,26 @@
+﻿@page "/xkcdcomicsviewer"
+
+@inject HttpClient Http
+@inject IComicUrlService ComicUrlService
+
+<h5>Click to see XKCD comic strip</h5>
+<br />
+<div>
+    <button type="button" class="btn btn-primary" @onclick="GetXkcdComic">Get Comic Strip</button>
+</div>
+
+<br />
+<div class="col-md-12 d-flex justify-content-center mb-5">
+    <img src="@_fileResult" class="img-fluid" alt="Comic Loading...">
+</div>
+
+
+@code {
+
+    private string _fileResult = "images/xkcd.jpg";
+
+    private async Task GetXkcdComic()
+    {
+        _fileResult = await ComicUrlService.GetXkcdComic();
+    }
+}
