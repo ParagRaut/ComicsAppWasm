@@ -27,7 +27,7 @@ jobs:
       run: dotnet publish --configuration Release --output publish
     
     - name: get folder structure
-      run: ls -la publish/
+      run: ls -la publish/wwwroot
     
     - name: Deploy to Github Pages
       uses: JamesIves/github-pages-deploy-action@releases/v3
