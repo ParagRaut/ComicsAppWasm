@@ -26,7 +26,7 @@ jobs:
     - name: Publish with dotnet
       run: dotnet publish --configuration Release --output publish
     
-    - name: get folder structure
+    - name: Get folder structure
       run: ls -la publish/wwwroot
     
     - name: Deploy to Github Pages
