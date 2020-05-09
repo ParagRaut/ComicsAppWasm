@@ -183,14 +183,15 @@ app {
 }
 
 .spinner {
-    margin: 100px auto;
-    width: 40px;
-    height: 40px;
+    margin: 400px auto;
+    width: 80px;
+    height: 80px;
     position: relative;
 }
 
 .cube1, .cube2 {
     background-color: #333;
+    float: left;
     width: 15px;
     height: 15px;
     position: absolute;
