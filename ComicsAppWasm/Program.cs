@@ -8,10 +8,7 @@ using ComicsAppWasm.ComicsService.ComicSources.DilbertComics;
 using ComicsAppWasm.ComicsService.ComicSources.GarfieldComics;
 using ComicsAppWasm.ComicsService.ComicSources.XKCD;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace ComicsAppWasm
 {
