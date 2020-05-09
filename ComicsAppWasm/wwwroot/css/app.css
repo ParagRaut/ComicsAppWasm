@@ -249,3 +249,13 @@ app {
         -webkit-transform: rotate(-360deg);
     }
 }
+
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

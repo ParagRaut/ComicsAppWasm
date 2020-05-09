@@ -65,16 +65,19 @@ namespace ComicsAppWasm.ComicsService
 
         public Task<string> GetDilbertComic()
         {
+            this._logger.LogInformation($"Returning Dilbert comic strip");
             return this.DilbertComicsService.GetDilbertComicUri();
         }
 
         public Task<string> GetGarfieldComic()
         {
+            this._logger.LogInformation($"Returning Garfield comic strip");
             return this.GarfieldComicsService.GetGarfieldComicUri();
         }
 
         public Task<string> GetXkcdComic()
         {
+            this._logger.LogInformation($"Returning XKCD comic strip");
             return this.XkcdComicsService.GetXkcdComicUri();
         }
     }
