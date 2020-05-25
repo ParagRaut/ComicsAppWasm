@@ -13,12 +13,12 @@ namespace ComicsAppWasm.ComicsService
     {
         public ComicUrlService([NotNull] IXkcdComic xkcdComic,
             [NotNull] IGarfieldComics garfieldComics,
-            [NotNull] IDilbertComics gDilbertComics,
+            [NotNull] IDilbertComics dilbertComics,
             ILogger<ComicUrlService> logger)
         {
             this.XkcdComicsService = xkcdComic;
             this.GarfieldComicsService = garfieldComics;
-            this.DilbertComicsService = gDilbertComics;
+            this.DilbertComicsService = dilbertComics;
             this._logger = logger;
         }
 
