@@ -17,18 +17,18 @@ namespace ComicsAppWasm.ComicsService.ComicSources.GarfieldComics
 
         private Uri BaseUri { get; }
 
-        private ComicModel ComicModel { get; set; }
 
-        public async Task<string> GetGarfieldComicUri()
-        {
-            var comicUri = new Uri($"{this.BaseUri}/garfield");
 
-            var httpClient = new HttpClient();
+        //public async Task<string> GetGarfieldComicUri()
+        //{
+        //    var comicUri = new Uri($"{this.BaseUri}/garfield");
 
-            string response = await httpClient.GetStringAsync(comicUri);
-            this.ComicModel = JsonConvert.DeserializeObject<ComicModel>(response);
-            
-            return this.ComicModel.image;
-        }
+        //    var httpClient = new HttpClient();
+
+        //    string response = await httpClient.GetStringAsync(comicUri);
+        //    this.ComicModel = JsonConvert.DeserializeObject<ComicModel>(response);
+
+        //    return this.ComicModel.image;
+        //}
     }
 }

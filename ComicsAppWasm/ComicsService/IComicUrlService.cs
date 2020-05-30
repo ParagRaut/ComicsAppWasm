@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace ComicsAppWasm.ComicsService
 {
@@ -10,7 +6,7 @@ namespace ComicsAppWasm.ComicsService
     {
         Task<string> GetRandomComic();
         Task<string> GetDilbertComic();
-        Task<string> GetGarfieldComic();
+        //Task<string> GetGarfieldComic();
         Task<string> GetXkcdComic();
     }
 }

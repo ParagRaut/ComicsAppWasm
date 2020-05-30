@@ -1,38 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
+﻿using System.Threading.Tasks;
+using ComicsAppWasm.ComicsService.ComicSources.DilbertComics.DilbertService;
 
 namespace ComicsAppWasm.ComicsService.ComicSources.DilbertComics
 {
     public class DilbertComics : IDilbertComics
     {
-        public DilbertComics()
-        {
-            this.BaseUri = new Uri("https://cors-anywhere.herokuapp.com/https://discordians-api.herokuapp.com/comic");
-        }
-
-        private Uri BaseUri { get; }
-
-        private ComicModel ComicModel { get; set; }
-
         public async Task<string> GetDilbertComicUri()
         {
-            var comicUri = new Uri($"{this.BaseUri}/dilbert");
+            DilbertServiceApi dilbertServiceApi = new DilbertServiceApi();
 
+            string comicStripUri = await dilbertServiceApi.GetDilberComicsUrl();
 
-            var httpClient = new HttpClient();
+            comicStripUri = $"https:{comicStripUri}.png";
 
-            string response = await httpClient.GetStringAsync(comicUri);
-            this.ComicModel = JsonConvert.DeserializeObject<ComicModel>(response);
-
-
-            this.ComicModel.image = $"https:{this.ComicModel.image}.png";
-
-            return this.ComicModel.image;
+            return comicStripUri;
         }
     }
 }
