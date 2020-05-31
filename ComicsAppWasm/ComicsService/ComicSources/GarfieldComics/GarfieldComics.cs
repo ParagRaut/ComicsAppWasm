@@ -6,7 +6,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.GarfieldComics
     {
         public string GetGarfieldComicUri()
         {
-            GarfieldServiceApi garfieldServiceApi = new GarfieldServiceApi();
+            var garfieldServiceApi = new GarfieldServiceApi();
             return garfieldServiceApi.GetGarfieldComicsUrl();        
         }
     }

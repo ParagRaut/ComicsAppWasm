@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using ComicsAppWasm.ComicsService.ComicSources.XKCD.Models;
 
@@ -19,7 +16,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.XKCD
 
         public async Task<string> GetXkcdComicUri()
         {
-            var comicId = await this.GetRandomComicNumber();
+            int comicId = await this.GetRandomComicNumber();
 
             string comicImageUri = await this.GetImageUri(comicId);
             
@@ -36,7 +33,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.XKCD
 
         private async Task<int> GetRandomComicNumber()
         {
-            var maxId = await this.GetLatestComicId();
+            int maxId = await this.GetLatestComicId();
             var randomNumber = new Random();
             return randomNumber.Next(maxId);
         }

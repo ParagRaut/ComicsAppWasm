@@ -52,8 +52,6 @@ namespace ComicsAppWasm.ComicsService
                     throw new ArgumentOutOfRangeException();
             }
 
-            this._logger.LogInformation($"Returning {comicName} comic strip");
-
             return this.ComicImageUri;
         }
 
@@ -73,10 +71,7 @@ namespace ComicsAppWasm.ComicsService
         {
             this._logger.LogInformation($"Returning Garfield comic strip");
            
-            return Task.Run(() =>
-            {
-                return this.GarfieldComicsService.GetGarfieldComicUri();
-            });
+            return Task.Run(() => this.GarfieldComicsService.GetGarfieldComicUri());
         }
 
         public Task<string> GetXkcdComic()
