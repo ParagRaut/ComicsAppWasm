@@ -1,6 +1,5 @@
 ﻿@page "/dilbertcomicsviewer"
 
-@inject HttpClient Http
 @inject IComicUrlService ComicUrlService
 
 <h5>Click to see Dilbert comic strip</h5>
@@ -16,7 +15,6 @@
 <picture>
     <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
 </picture>
-
 
 @code {
 

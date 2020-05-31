@@ -9,7 +9,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.DilbertComics
         {
             DilbertServiceApi dilbertServiceApi = new DilbertServiceApi();
 
-            string comicStripUri = await dilbertServiceApi.GetDilberComicsUrl();
+            string comicStripUri = await dilbertServiceApi.GetDilbertComicsUrl();
 
             comicStripUri = $"https:{comicStripUri}.png";
 

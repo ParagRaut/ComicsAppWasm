@@ -24,5 +24,6 @@
 
 	<ItemGroup>
 	  <Folder Include="ComicsService\ComicSources\DilbertComics\DilbertService\" />
+	  <Folder Include="ComicsService\ComicSources\GarfieldComics\GarfieldService\" />
 	</ItemGroup>
 </Project>

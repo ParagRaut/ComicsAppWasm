@@ -1,6 +1,5 @@
 ﻿@page "/garfieldcomicsviewer"
 
-@inject HttpClient Http
 @inject IComicUrlService ComicUrlService
 
 <h5>Click to see Garfield comic strip</h5>
@@ -17,13 +16,12 @@
     <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
 </picture>
 
-
 @code {
 
     private string _fileResult = "images/garfield.png";
 
     private async Task GetGarfieldComic()
     {
-        //_fileResult = await ComicUrlService.GetGarfieldComic();
+        _fileResult = await ComicUrlService.GetGarfieldComic();
     }
 }

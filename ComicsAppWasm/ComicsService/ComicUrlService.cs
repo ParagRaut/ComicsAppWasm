@@ -39,7 +39,7 @@ namespace ComicsAppWasm.ComicsService
             switch (comicName)
             {
                 case ComicEnum.Garfield:
-                   // this.ComicImageUri = this.GetGarfieldComic();
+                    this.ComicImageUri = this.GetGarfieldComic();
                     break;
                 case ComicEnum.Xkcd:
                     this.ComicImageUri = this.GetXkcdComic();
@@ -69,11 +69,15 @@ namespace ComicsAppWasm.ComicsService
             return this.DilbertComicsService.GetDilbertComicUri();
         }
 
-        //public Task<string> GetGarfieldComic()
-        //{
-        //    this._logger.LogInformation($"Returning Garfield comic strip");
-        //    return this.GarfieldComicsService.GetGarfieldComicUri();
-        //}
+        public Task<string> GetGarfieldComic()
+        {
+            this._logger.LogInformation($"Returning Garfield comic strip");
+           
+            return Task.Run(() =>
+            {
+                return this.GarfieldComicsService.GetGarfieldComicUri();
+            });
+        }
 
         public Task<string> GetXkcdComic()
         {

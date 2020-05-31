@@ -1,6 +1,5 @@
 ﻿@page "/randomcomicsviewer"
 
-@inject HttpClient Http
 @inject IComicUrlService ComicUrlService
 
 <h5>Click to see random comic strip</h5>
@@ -13,12 +12,9 @@
 
 <br />
 
-
 <picture>
     <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
 </picture>
-
-
 
 @code {
 
@@ -26,6 +22,6 @@
 
     private async Task GetRandomComic()
     {
-        //_fileResult = await ComicUrlService.GetRandomComic();
+        _fileResult = await ComicUrlService.GetRandomComic();
     }
 }

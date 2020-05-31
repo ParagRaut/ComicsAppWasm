@@ -6,7 +6,7 @@ namespace ComicsAppWasm.ComicsService
     {
         Task<string> GetRandomComic();
         Task<string> GetDilbertComic();
-        //Task<string> GetGarfieldComic();
+        Task<string> GetGarfieldComic();
         Task<string> GetXkcdComic();
     }
 }
