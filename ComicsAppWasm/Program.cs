@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using ComicsAppWasm.ComicsService;
+using ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes;
 using ComicsAppWasm.ComicsService.ComicSources.DilbertComics;
 using ComicsAppWasm.ComicsService.ComicSources.GarfieldComics;
 using ComicsAppWasm.ComicsService.ComicSources.XKCD;
@@ -25,6 +26,7 @@ namespace ComicsAppWasm
             builder.Services.AddSingleton<IXkcdComic, XkcdComic>();
             builder.Services.AddSingleton<IGarfieldComics, GarfieldComics>();
             builder.Services.AddSingleton<IDilbertComics, DilbertComics>();
+            builder.Services.AddSingleton<ICalvinAndHobbesComics, CalvinAndHobbesComics>();
             builder.Services.AddSingleton<IComicUrlService, ComicUrlService>();
 
             await builder.Build().RunAsync();

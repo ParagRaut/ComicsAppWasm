@@ -1,0 +1,27 @@
+﻿@page "/calvinandhobbescomicsviewer"
+
+@inject IComicUrlService ComicUrlService
+
+    <h5>Click to see Calvin and Hobbes comic strip</h5>
+
+<br />
+
+<div>
+    <RadzenButton Click="@GetCalvinAndHobbesComic" Text="Get Comic Strip"/>
+</div>
+
+<br />
+
+<picture>
+    <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
+</picture>
+
+@code {
+
+    private string _fileResult = "images/calvinandhobbes.jpg";
+
+    private async Task GetCalvinAndHobbesComic()
+    {
+        _fileResult = await ComicUrlService.GetCalvinAndHobbsComic();
+    }
+}

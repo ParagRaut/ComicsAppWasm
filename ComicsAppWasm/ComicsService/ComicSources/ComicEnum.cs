@@ -4,6 +4,7 @@
     {
         Garfield,
         Xkcd,
-        Dilbert
+        Dilbert,
+        CalvinAndHobbes
     }
 }
