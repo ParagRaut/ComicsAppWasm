@@ -12,16 +12,30 @@
 
 <br />
 
-<picture>
-    <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
-</picture>
+<SpinLoader IsLoading="_isLoading">
+    <LoadingTemplate>
+        <div class="col-12" style="background-color: transparent; height: 200px; vertical-align: middle"></div>
+        <br />
+        <br />
+        <Swing Center="true" Size="100px"></Swing>
+    </LoadingTemplate>
+    <ContentTemplate>
+        <picture>
+            <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
+        </picture>
+    </ContentTemplate>
+</SpinLoader>
 
 @code {
+
+    private bool _isLoading = false;
 
     private string _fileResult = "images/garfield.png";
 
     private async Task GetGarfieldComic()
     {
+        _isLoading = true;
         _fileResult = await ComicUrlService.GetGarfieldComic();
+        _isLoading = false;
     }
 }

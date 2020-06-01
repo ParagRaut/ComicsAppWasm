@@ -12,16 +12,30 @@
 
 <br />
 
-<picture>
-    <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
-</picture>
+<SpinLoader IsLoading="_isLoading">
+    <LoadingTemplate>
+        <div class="col-12" style="background-color: transparent; height: 200px; vertical-align: middle"></div>
+        <br />
+        <br />
+        <Swing Center="true" Size="100px"></Swing>
+    </LoadingTemplate>
+    <ContentTemplate>
+        <picture>
+            <img src="@_fileResult" class="img-thumbnail" alt="Comic Loading...">
+        </picture>
+    </ContentTemplate>
+</SpinLoader>
 
 @code {
+
+    private bool _isLoading;
 
     private string _fileResult = "images/calvinandhobbes.jpg";
 
     private async Task GetCalvinAndHobbesComic()
     {
+        _isLoading = true;
         _fileResult = await ComicUrlService.GetCalvinAndHobbsComic();
+        _isLoading = false;
     }
 }
