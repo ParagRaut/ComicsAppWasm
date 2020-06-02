@@ -7,7 +7,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes.CalvinAndHobb
 {
     public class CalvinAndHobbesServiceApi
     {
-        public async Task<string> CalvinAndHobsComicUrl()
+        public async Task<string> CalvinAndHobbesComicUrl()
         {
             var baseUrl = new Uri($"https://cors-anywhere.herokuapp.com/https://www.gocomics.com/random/calvinandhobbes");
 
