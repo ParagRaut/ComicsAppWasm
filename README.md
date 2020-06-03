@@ -12,3 +12,4 @@ you can see it live here: <br/>
 In chrome you can install it as a chrome app. In phone you can add it to home screen it will act as a native web app.
 
 Feel free to create pull requests and enjoy comic strips without ads. :)
+ 
