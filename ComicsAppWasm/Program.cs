@@ -21,13 +21,13 @@ namespace ComicsAppWasm
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            builder.Services.AddSingleton<IXKCD, XKCD>(p => new XKCD(new HttpClient(), true));
+            builder.Services.AddScoped<IXKCD, XKCD>(p => new XKCD(new HttpClient(), true));
 
-            builder.Services.AddSingleton<IXkcdComic, XkcdComic>();
-            builder.Services.AddSingleton<IGarfieldComics, GarfieldComics>();
-            builder.Services.AddSingleton<IDilbertComics, DilbertComics>();
-            builder.Services.AddSingleton<ICalvinAndHobbesComics, CalvinAndHobbesComics>();
-            builder.Services.AddSingleton<IComicUrlService, ComicUrlService>();
+            builder.Services.AddScoped<IXkcdComic, XkcdComic>();
+            builder.Services.AddScoped<IGarfieldComics, GarfieldComics>();
+            builder.Services.AddScoped<IDilbertComics, DilbertComics>();
+            builder.Services.AddScoped<ICalvinAndHobbesComics, CalvinAndHobbesComics>();
+            builder.Services.AddScoped<IComicUrlService, ComicUrlService>();
 
             await builder.Build().RunAsync();
         }
