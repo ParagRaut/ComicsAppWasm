@@ -8,6 +8,7 @@
 
 <div>
     <RadzenButton Click="@GetGarfieldComic" Text="Get Comic Strip"/>
+    <RadzenButton Click="@GetPreviousComic" Text="Take me back <" />
 </div>
 
 <br />
@@ -32,10 +33,25 @@
 
     private string _fileResult = "images/garfield.png";
 
+    private IList<string> _imageList;
+    protected override void OnInitialized()
+    {
+        _imageList = new List<string>();
+        _imageList.Add("images/garfield.png");
+    }    
     private async Task GetGarfieldComic()
     {
         _isLoading = true;
         _fileResult = await ComicUrlService.GetGarfieldComic();
+        _imageList.Add(_fileResult);
         _isLoading = false;
+    }
+
+    private void GetPreviousComic()
+    {
+        int index = 1;
+        var a = _imageList.AsEnumerable().Reverse().Skip(index).Last();
+        _fileResult = a;
+        index ++ ;
     }
 }
