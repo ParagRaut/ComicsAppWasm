@@ -8,9 +8,9 @@
 <br />
 
 <div>
-    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Text="< Take me back" />
+    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_left" Text="  " />
     <RadzenButton Click="@GetDilbertComic" Text="Random" />
-    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Text="Next one please >" />
+    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_right" Text="  " />
 </div>
 
 <br />
@@ -42,7 +42,7 @@
     protected override void OnInitialized()
     {
         _imageList = new List<string>
-        {
+{
             "images/dilbert.png"
         };
     }

@@ -3,15 +3,16 @@
 
 @inject IComicUrlService ComicUrlService
 
-    <h5>Click to see Calvin and Hobbes comic strip</h5>
+<h5>Click to see Calvin and Hobbes comic strip</h5>
 
 <br />
 
 <div>
-    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Text="< Take me back" />
+    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_left" Text="  " />
     <RadzenButton Click="@GetCalvinAndHobbesComic" Text="Random" />
-    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Text="Next one please >" />
+    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_right" Text="  " />
 </div>
+
 <br />
 
 <SpinLoader IsLoading="_isLoading">
@@ -41,7 +42,7 @@
     protected override void OnInitialized()
     {
         _imageList = new List<string>
-        {
+    {
             "images/calvinandhobbes.jpg"
         };
     }

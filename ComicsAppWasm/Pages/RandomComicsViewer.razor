@@ -8,9 +8,9 @@
 <br />
 
 <div>
-    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Text="< Take me back" />
+    <RadzenButton Click="@GetPreviousComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_left" Text="  " />
     <RadzenButton Click="@GetRandomComic" Text="Random" />
-    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Text="Next one please >" />
+    <RadzenButton Click="@GetNextComic" ButtonStyle="ButtonStyle.Secondary" Icon="chevron_right" Text="  " />
 </div>
 
 <br />
@@ -18,8 +18,8 @@
 <SpinLoader IsLoading="_isLoading">
     <LoadingTemplate>
         <div class="col-12" style="background-color: transparent; vertical-align: middle"></div>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <Swing Center="true" Size="100px"></Swing>
     </LoadingTemplate>
     <ContentTemplate>
@@ -42,7 +42,7 @@
     protected override void OnInitialized()
     {
         _imageList = new List<string>
-        {
+    {
             "images/comics.jpg"
         };
     }
