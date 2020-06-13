@@ -16,7 +16,7 @@ namespace ComicsAppWasm.ComicsService
             [NotNull] IGarfieldComics garfieldComics,
             [NotNull] IDilbertComics dilbertComics,
             [NotNull] ICalvinAndHobbesComics calvinAndHobbesComics,
-            ILogger<ComicUrlService> logger)
+            [NotNull] ILogger<ComicUrlService> logger)
         {
             this.XkcdComicsService = xkcdComic;
             this.GarfieldComicsService = garfieldComics;
