@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicsAppWasm", "ComicsAppWasm\ComicsAppWasm.csproj", "{D445EB26-6048-416F-AAC9-82EC9A26E5D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComicsAppWasm", "src\ComicsAppWasm.csproj", "{D445EB26-6048-416F-AAC9-82EC9A26E5D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
