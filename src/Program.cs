@@ -1,13 +1,13 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ComicsAppWasm.ComicsService;
-using ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes;
-using ComicsAppWasm.ComicsService.ComicSources.DilbertComics;
-using ComicsAppWasm.ComicsService.ComicSources.GarfieldComics;
-using ComicsAppWasm.ComicsService.ComicSources.XKCD;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using ComicsAppWasm.ComicsService;
+using ComicsAppWasm.ComicsService.ComicSources.XKCD;
+using ComicsAppWasm.ComicsService.ComicSources.GarfieldComics;
+using ComicsAppWasm.ComicsService.ComicSources.DilbertComics;
+using ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes;
 
 namespace ComicsAppWasm
 {
@@ -17,9 +17,9 @@ namespace ComicsAppWasm
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
 
-            builder.RootComponents.Add<App>("app");
+            builder.RootComponents.Add<App>("#app");
 
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             builder.Services.AddScoped<IXKCD, XKCD>(p => new XKCD(new HttpClient(), true));
 
