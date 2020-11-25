@@ -8,9 +8,9 @@ namespace ComicsAppWasm.ComicsService.ComicSources.GarfieldComics.GarfieldServic
 {
     public class GarfieldServiceApi
     {
-        public async Task<string> GetGarfieldComicsUrl()
+        public static async Task<string> GetGarfieldComicsUrl()
         {
-            string dateRange = this.GetRandomDateRange();
+            string dateRange = GetRandomDateRange();
 
             var baseUrl = new Uri($"https://cors-anywhere.herokuapp.com/https://www.gocomics.com/garfield/{dateRange}");
 
@@ -18,12 +18,12 @@ namespace ComicsAppWasm.ComicsService.ComicSources.GarfieldComics.GarfieldServic
 
             string source = await httpClient.GetStringAsync(baseUrl);
 
-            string imageLink = this.GetUri(source);
+            string imageLink = GetUri(source);
 
             return imageLink;
         }
 
-        private string GetRandomDateRange()
+        private static string GetRandomDateRange()
         {
             var random = new Random();
             var startDate = new DateTime(1978, 6, 19);
@@ -31,7 +31,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.GarfieldComics.GarfieldServic
             return startDate.AddDays(random.Next(dateRange)).ToString("yyyy/MM/dd");
         }
 
-        private string GetUri(string source)
+        private static string GetUri(string source)
         {
             var document = new HtmlDocument();
 
