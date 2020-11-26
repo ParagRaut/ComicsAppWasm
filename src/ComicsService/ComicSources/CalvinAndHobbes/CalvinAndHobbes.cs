@@ -6,7 +6,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes
     {
         public async Task<string> CalvinAndHobbesComicUri()
         {
-            return await Service.GetComicUrl();
+            return await Service.GetComicUri();
         }
     }
 }

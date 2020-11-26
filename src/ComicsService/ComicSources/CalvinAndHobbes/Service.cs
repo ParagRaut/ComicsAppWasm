@@ -7,7 +7,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes
 {
     public class Service
     {
-        public static async Task<string> GetComicUrl()
+        public static async Task<string> GetComicUri()
         {
             var baseUrl = new Uri($"https://cors-anywhere.herokuapp.com/https://www.gocomics.com/random/calvinandhobbes");
 
