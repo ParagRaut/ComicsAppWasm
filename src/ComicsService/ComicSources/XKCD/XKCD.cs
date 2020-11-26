@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace ComicsAppWasm.ComicsService.ComicSources.XKCD
+namespace ComicsAppWasm.ComicsService.ComicSources.Xkcd
 {
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;

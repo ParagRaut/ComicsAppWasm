@@ -3,11 +3,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes.CalvinAndHobbesService
+namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes
 {
-    public class CalvinAndHobbesServiceApi
+    public class Service
     {
-        public static async Task<string> CalvinAndHobbesComicUrl()
+        public static async Task<string> GetComicUrl()
         {
             var baseUrl = new Uri($"https://cors-anywhere.herokuapp.com/https://www.gocomics.com/random/calvinandhobbes");
 
@@ -15,12 +15,12 @@ namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes.CalvinAndHobb
 
             string source = await httpClient.GetStringAsync(baseUrl);
 
-            string imageLink = GetUri(source);
+            string imageLink = GetImageUri(source);
 
             return imageLink;
         }
 
-        private static string GetUri(string source)
+        private static string GetImageUri(string source)
         {
             var document = new HtmlDocument();
 

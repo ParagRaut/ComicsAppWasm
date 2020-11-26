@@ -3,11 +3,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.DilbertComics.DilbertService
+namespace ComicsAppWasm.ComicsService.ComicSources.Dilbert
 {
-    public class DilbertServiceApi
+    public class Service
     {
-        public static async Task<string> GetDilbertComicsUrl()
+        public static async Task<string> GetComicsUrl()
         {
             string dateRange = GetRandomDateRange();  
 
@@ -17,12 +17,12 @@ namespace ComicsAppWasm.ComicsService.ComicSources.DilbertComics.DilbertService
 
             string source = await httpClient.GetStringAsync(baseUrl);
 
-            string imageLink = GetUri(source);
+            string imageLink = GetImageUri(source);
 
             return imageLink;
         }
 
-        private static string GetUri(string source)
+        private static string GetImageUri(string source)
         {
             var document = new HtmlDocument();
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using ComicsAppWasm.ComicsService.ComicSources.XKCD.Models;
+using ComicsAppWasm.ComicsService.ComicSources.Xkcd.Models;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.XKCD
+namespace ComicsAppWasm.ComicsService.ComicSources.Xkcd
 {
     public class XkcdComic : IXkcdComic
     {

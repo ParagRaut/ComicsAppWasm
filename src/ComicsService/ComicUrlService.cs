@@ -3,49 +3,49 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using ComicsAppWasm.ComicsService.ComicSources;
 using ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes;
-using ComicsAppWasm.ComicsService.ComicSources.DilbertComics;
-using ComicsAppWasm.ComicsService.ComicSources.GarfieldComics;
-using ComicsAppWasm.ComicsService.ComicSources.XKCD;
+using ComicsAppWasm.ComicsService.ComicSources.Dilbert;
+using ComicsAppWasm.ComicsService.ComicSources.Garfield;
+using ComicsAppWasm.ComicsService.ComicSources.Xkcd;
 using Microsoft.Extensions.Logging;
 
 namespace ComicsAppWasm.ComicsService
 {
     public class ComicUrlService : IComicUrlService
     {
-        private readonly IXkcdComic _xkcdComic;
-        private readonly IGarfieldComics _garfieldComics;
-        private readonly IDilbertComics _dilbertComics;
-        private readonly ICalvinAndHobbesComics _calvinAndHobbesComics;
+        private readonly IXkcdComic _xkcd;
+        private readonly IGarfield _garfield;
+        private readonly IDilbert _dilbert;
+        private readonly ICalvinAndHobbes _calvinAndHobbes;
         private readonly ILogger<ComicUrlService> _logger;
 
-        public ComicUrlService([NotNull] IXkcdComic xkcdComic,
-            [NotNull] IGarfieldComics garfieldComics,
-            [NotNull] IDilbertComics dilbertComics,
-            [NotNull] ICalvinAndHobbesComics calvinAndHobbesComics,
+        public ComicUrlService([NotNull] IXkcdComic xkcd,
+            [NotNull] IGarfield garfield,
+            [NotNull] IDilbert dilbert,
+            [NotNull] ICalvinAndHobbes calvinAndHobbes,
             [NotNull] ILogger<ComicUrlService> logger)
         {
-            this._xkcdComic = xkcdComic;
-            this._garfieldComics = garfieldComics;
-            this._dilbertComics = dilbertComics;
-            this._calvinAndHobbesComics = calvinAndHobbesComics;
-            this._logger = logger;
+            _xkcd = xkcd;
+            _garfield = garfield;
+            _dilbert = dilbert;
+            _calvinAndHobbes = calvinAndHobbes;
+            _logger = logger;
         }
 
         public Task<string> GetRandomComic()
         {
-            ComicEnum comicName = this.ChooseRandomComicSource();
+            ComicEnum comicName = ChooseRandomComicSource();
 
             return comicName switch
             {
-                ComicEnum.Garfield => this.GetGarfieldComic(),
-                ComicEnum.Xkcd => this.GetXkcdComic(),
-                ComicEnum.Dilbert => this.GetDilbertComic(),
-                ComicEnum.CalvinAndHobbes => this.GetCalvinAndHobbesComic(),
+                ComicEnum.Garfield => GetGarfieldComic(),
+                ComicEnum.Xkcd => GetXkcdComic(),
+                ComicEnum.Dilbert => GetDilbertComic(),
+                ComicEnum.CalvinAndHobbes => GetCalvinAndHobbesComic(),
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
 
-        private ComicEnum ChooseRandomComicSource()
+        private static ComicEnum ChooseRandomComicSource()
         {
             var random = new Random();
 
@@ -54,30 +54,30 @@ namespace ComicsAppWasm.ComicsService
 
         public Task<string> GetDilbertComic()
         {
-            this._logger.LogInformation($"Returning Dilbert comic strip");
+            _logger.LogInformation($"Returning Dilbert comic strip");
 
-            return this._dilbertComics.GetDilbertComicUri();
+            return _dilbert.GetDilbertComicUri();
         }
 
         public Task<string> GetGarfieldComic()
         {
-            this._logger.LogInformation($"Returning Garfield comic strip");
+            _logger.LogInformation($"Returning Garfield comic strip");
 
-            return this._garfieldComics.GetGarfieldComicUri();
+            return _garfield.GetGarfieldComicUri();
         }
 
         public Task<string> GetXkcdComic()
         {
-            this._logger.LogInformation($"Returning XKCD comic strip");
+            _logger.LogInformation($"Returning XKCD comic strip");
 
-            return this._xkcdComic.GetXkcdComicUri();
+            return _xkcd.GetXkcdComicUri();
         }
 
         public Task<string> GetCalvinAndHobbesComic()
         {
-            this._logger.LogInformation($"Returning Calvin and Hobbes comic strip");
+            _logger.LogInformation($"Returning Calvin and Hobbes comic strip");
 
-            return this._calvinAndHobbesComics.CalvinAndHobbesComicUri();
+            return _calvinAndHobbes.CalvinAndHobbesComicUri();
         }
     }
 }
