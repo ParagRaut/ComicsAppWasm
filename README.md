@@ -1,5 +1,7 @@
 # ComicsAppWasm
 
+[![Deploy ComicsAppWasm to Github Pages](https://github.com/ParagRaut/ComicsAppWasm/actions/workflows/main.yml/badge.svg)](https://github.com/ParagRaut/ComicsAppWasm/actions/workflows/main.yml)
+
 With this small installable app you can browse random comic strips from sources like Garfield, XKCD, Calvin and Hobbes and Dilbert
 
 This progressive web app is implemented in pure .Net Core Blazor WebAseembly
