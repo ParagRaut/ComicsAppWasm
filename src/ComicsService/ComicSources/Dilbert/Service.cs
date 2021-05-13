@@ -11,7 +11,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.Dilbert
         {
             string dateRange = GetRandomDateRange();  
 
-            var baseUrl = new Uri($"hhttp://alloworigin.com/get?url=https://dilbert.com/strip/{dateRange}");
+            var baseUrl = new Uri($"http://alloworigin.com/get?url=https://dilbert.com/strip/{dateRange}");
 
             var httpClient = new HttpClient();
 
