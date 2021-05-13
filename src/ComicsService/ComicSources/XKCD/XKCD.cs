@@ -129,7 +129,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.Xkcd
         /// </summary>
         private void Initialize()
         {
-            BaseUri = new System.Uri("https://cors-anywhere.herokuapp.com/http://xkcd.com");
+            BaseUri = new System.Uri("https://thingproxy.freeboard.io/fetch/http://xkcd.com");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
