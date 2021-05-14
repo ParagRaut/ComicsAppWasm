@@ -341,3 +341,6 @@ healthchecksdb
 
 #Mac DS_Store
 .DS_Store
+.vscode/launch.json
+
+.vscode/tasks.json
