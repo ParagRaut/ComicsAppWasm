@@ -357,7 +357,7 @@
       "url": "_framework\/System.Linq.Dynamic.Core.dll"
     },
     {
-      "hash": "sha256-LlUH92xHenKpiB1eJ6oj8tT5E3J\/4JFkJrNu7mIctDA=",
+      "hash": "sha256-rexGPVV7TRxi7tSQr\/QzEC\/KqqRHoaIDA55ofj1HwXo=",
       "url": "_framework\/ComicsAppWasm.dll"
     },
     {
@@ -501,7 +501,7 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-N0v4l\/CY7spS43xpVzmzeYNT5ivBaNjIWmjq8CVEzVc=",
+      "hash": "sha256-WZrVq4G5+p1XVVNNVe5LxL7cLB9rV0jcBa5Q8gq+kf0=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -509,5 +509,5 @@
       "url": "_framework\/blazor.webassembly.js"
     }
   ],
-  "version": "SoUfp6xv"
+  "version": "rdmSHXAJ"
 };
