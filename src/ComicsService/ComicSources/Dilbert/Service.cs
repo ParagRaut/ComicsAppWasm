@@ -11,7 +11,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.Dilbert
         {
             string dateRange = GetRandomDateRange();  
 
-            var baseUrl = new Uri($"https://damp-tundra-00017.herokuapp.com/https://dilbert.com/strip/{dateRange}");
+            var baseUrl = new Uri($"https://general-cors-proxy.herokuapp.com/https://dilbert.com/strip/{dateRange}");
 
             var httpClient = new HttpClient();
 

@@ -4,7 +4,11 @@
 
 With this small installable app you can browse random comic strips from sources like Garfield, XKCD, Calvin and Hobbes and Dilbert
 
-This progressive web app is implemented in pure .Net Core Blazor WebAseembly
+This progressive web app is serverless and implemented in pure .Net Core Blazor WebAseembly
+
+It uses a [CORS proxy](https://github.com/Rob--W/cors-anywhere) hosted on heroku
+
+Please create your own proxy on heroku to mitigate no-cors issue 
 
 It also uses 'Github Actions' to continuously integrate and deploy to github pages
 

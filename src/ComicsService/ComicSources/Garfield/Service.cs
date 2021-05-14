@@ -12,7 +12,7 @@ namespace ComicsAppWasm.ComicsService.ComicSources.Garfield
         {
             string dateRange = GetRandomDateRange();
 
-            var baseUrl = new Uri($"https://damp-tundra-00017.herokuapp.com/https://www.gocomics.com/garfield/{dateRange}");
+            var baseUrl = new Uri($"https://general-cors-proxy.herokuapp.com/https://www.gocomics.com/garfield/{dateRange}");
 
             var httpClient = new HttpClient();
 
