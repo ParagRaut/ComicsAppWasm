@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET 5
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 5.0.6
     - name: Publish with dotnet
       run: dotnet publish --configuration Release --output publish
     
