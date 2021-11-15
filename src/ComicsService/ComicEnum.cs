@@ -1,4 +1,4 @@
-﻿namespace ComicsAppWasm.ComicsService.ComicSources;
+﻿namespace ComicsAppWasm.ComicsService;
 
 public enum ComicEnum
 {
@@ -7,3 +7,4 @@ public enum ComicEnum
     Dilbert,
     CalvinAndHobbes
 }
+

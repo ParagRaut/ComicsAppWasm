@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.Dilbert;
+namespace ComicsAppWasm.ComicsService.Dilbert;
 
-public class Service
+public static class DilbertService
 {
     public static async Task<string> GetComicUri()
     {

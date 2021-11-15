@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.Garfield;
+namespace ComicsAppWasm.ComicsService.Garfield;
 
-public class Service
+public static class GarfieldService
 {
     public static async Task<string> GetComicUri()
     {

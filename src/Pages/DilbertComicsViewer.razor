@@ -1,7 +1,6 @@
 ﻿@page "/dilbertcomicsviewer"
+@using ComicsAppWasm.ComicsService.Dilbert
 @using Radzen
-
-@inject IComicUrlService ComicUrlService
 
 <h5>Click to see Dilbert comic strip</h5>
 
@@ -51,7 +50,7 @@
     private async Task GetDilbertComic()
     {
         _isLoading = true;
-        _fileResult = await ComicUrlService.GetDilbertComic();
+        _fileResult = await DilbertService.GetComicUri();
         _imageList.Add(_fileResult);
         _isLoading = false;
     }

@@ -1,8 +1,8 @@
 ﻿using HtmlAgilityPack;
 
-namespace ComicsAppWasm.ComicsService.ComicSources.CalvinAndHobbes;
+namespace ComicsAppWasm.ComicsService.CalvinAndHobbes;
 
-public class Service
+public static class CalvinAndHobbesService
 {
     public static async Task<string> GetComicUri()
     {

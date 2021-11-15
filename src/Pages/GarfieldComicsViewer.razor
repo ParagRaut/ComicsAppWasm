@@ -1,7 +1,6 @@
 ﻿@page "/garfieldcomicsviewer"
+@using ComicsAppWasm.ComicsService.Garfield
 @using Radzen
-
-@inject IComicUrlService ComicUrlService
 
 <h5>Click to see Garfield comic strip</h5>
 
@@ -51,7 +50,7 @@
     private async Task GetGarfieldComic()
     {
         _isLoading = true;
-        _fileResult = await ComicUrlService.GetGarfieldComic();
+        _fileResult = await GarfieldService.GetComicUri();
         _imageList.Add(_fileResult);
         _isLoading = false;
     }

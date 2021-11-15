@@ -1,7 +1,13 @@
 ﻿@page "/randomcomicsviewer"
+
+@using ComicsAppWasm.ComicsService.XKCD
+@using ComicsAppWasm.ComicsService.CalvinAndHobbes
+@using ComicsAppWasm.ComicsService.Dilbert
+@using ComicsAppWasm.ComicsService.Garfield
+
 @using Radzen
 
-@inject IComicUrlService ComicUrlService
+@inject IXKCDService service
 
 <h5>Click to see random comic strip</h5>
 
@@ -51,7 +57,18 @@
     private async Task GetRandomComic()
     {
         _isLoading = true;
-        _fileResult = await ComicUrlService.GetRandomComic();
+
+        ComicEnum comicName = ChooseRandomComicSource();
+
+        _fileResult = comicName switch
+        {
+            ComicEnum.Garfield => await GarfieldService.GetComicUri(),
+            ComicEnum.Xkcd => await service.GetComicUri(),
+            ComicEnum.Dilbert => await DilbertService.GetComicUri(),
+            ComicEnum.CalvinAndHobbes => await CalvinAndHobbesService.GetComicUri(),
+            _ => throw new ArgumentOutOfRangeException()
+        };        
+
         _imageList.Add(_fileResult);
         _isLoading = false;
     }
@@ -81,5 +98,11 @@
         {
             _fileResult = _imageList[_currentIndex + 1];
         }
+    }
+
+    private static ComicEnum ChooseRandomComicSource()
+    {
+        var random = new Random();
+        return (ComicEnum)random.Next(Enum.GetNames(typeof(ComicEnum)).Length);
     }
 }

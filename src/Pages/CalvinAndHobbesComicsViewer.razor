@@ -1,7 +1,6 @@
 ﻿@page "/calvinandhobbescomicsviewer"
+@using ComicsAppWasm.ComicsService.CalvinAndHobbes
 @using Radzen
-
-@inject IComicUrlService ComicUrlService
 
 <h5>Click to see Calvin and Hobbes comic strip</h5>
 
@@ -51,7 +50,7 @@
     private async Task GetCalvinAndHobbesComic()
     {
         _isLoading = true;
-        _fileResult = await ComicUrlService.GetCalvinAndHobbesComic();
+        _fileResult = await CalvinAndHobbesService.GetComicUri();
         _imageList.Add(_fileResult);
         _isLoading = false;
     }
